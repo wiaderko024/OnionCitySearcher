@@ -16,7 +16,7 @@ public class GUI {
     }
 
     private void createGUI() throws IOException {
-        CityLoader loader = new CityLoader("data/cities.csv");
+        CityLoader loader = new CityLoader("cities.csv");
         CityModel model = new CityModel(loader.getCities());
 
         new MyJFrame(model, loader);

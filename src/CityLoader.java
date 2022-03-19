@@ -16,7 +16,12 @@ public class CityLoader {
     }
 
     private List<String[]> readCities(String path) throws IOException {
-        List<String> content = Files.readAllLines(Path.of(new File("").getAbsolutePath() + "/src/" + path));
+        // Development
+        // List<String> content = Files.readAllLines(Path.of(new File("").getAbsolutePath() + "/src/" + path));
+
+        // Production
+        List<String> content = Files.readAllLines(Path.of(path));
+
         List<String[]> cities = new ArrayList<>();
 
         for(String line : content) {
