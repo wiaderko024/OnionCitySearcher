@@ -15,17 +15,26 @@ public class CityModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int column) {
-        return switch (column) {
-            case 0 -> "Nazwa miejscowości";
-            case 1 -> "Rodzaj";
-            case 2 -> "Gmina";
-            case 3 -> "Powiat";
-            case 4 -> "Województwo";
-            case 5 -> "Identyfikator";
-            case 6 -> "Dopełniacz";
-            case 7 -> "Przymiotnik";
-            default -> "Nothing";
-        };
+        switch (column) {
+            case 0:
+                return "Nazwa miejscowości";
+            case 1:
+                return "Rodzaj";
+            case 2:
+                return "Gmina";
+            case 3:
+                return "Powiat";
+            case 4:
+                return "Województwo";
+            case 5:
+                return "Identyfikator";
+            case 6:
+                return "Dopełniacz";
+            case 7:
+                return "Przymiotnik";
+            default:
+                return "Nothing";
+        }
     }
 
     @Override

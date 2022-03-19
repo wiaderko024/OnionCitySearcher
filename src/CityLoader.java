@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -20,7 +21,7 @@ public class CityLoader {
         // List<String> content = Files.readAllLines(Path.of(new File("").getAbsolutePath() + "/src/" + path));
 
         // Production
-        List<String> content = Files.readAllLines(Path.of(path));
+        List<String> content = Files.readAllLines(Paths.get(path));
 
         List<String[]> cities = new ArrayList<>();
 
