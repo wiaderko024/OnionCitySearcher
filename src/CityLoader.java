@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ public class CityLoader {
 
     private List<String[]> readCities(String path) throws IOException {
         // Development
-        // List<String> content = Files.readAllLines(Path.of(new File("").getAbsolutePath() + "/src/" + path));
+        // List<String> content = Files.readAllLines(Paths.get((new File("").getAbsolutePath() + "/src/" + path)));
 
         // Production
         List<String> content = Files.readAllLines(Paths.get(path));

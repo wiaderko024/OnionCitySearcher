@@ -16,20 +16,6 @@ public class SearchPanel extends JPanel {
         this.label = new JLabel("Wyniki wyszukiwania: ");
 
         this.textField = new JTextField(60);
-        textField.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {}
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    label.setText("Wyniki wyszukiwania: " + textField.getText());
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {}
-        });
 
         this.button = new JButton("Szukaj");
 
