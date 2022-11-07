@@ -32,7 +32,19 @@ public class GUI {
             try {
                 CityLoader loader = new CityLoader("poland.csv");
                 PolandCityModel model = new PolandCityModel(loader.getCities());
+                frame.setVisible(false);
                 new PolandJFrame(model, loader);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        button2.addActionListener(e -> {
+            try {
+                CityLoader loader = new CityLoader("norway.csv");
+                NorwayCityModel model = new NorwayCityModel(loader.getCities());
+                frame.setVisible(false);
+                new NorwayJFrame(model, loader);
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
