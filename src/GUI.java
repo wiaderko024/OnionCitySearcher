@@ -50,6 +50,17 @@ public class GUI {
             }
         });
 
+        button3.addActionListener(e -> {
+            try {
+                CityLoader loader = new CityLoader("sweden.csv");
+                SwedenCityModel model = new SwedenCityModel(loader.getCities());
+                frame.setVisible(false);
+                new SwedenJFrame(model, loader);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
         frame.add(button1);
         frame.add(button2);
         frame.add(button3);
