@@ -17,10 +17,10 @@ public class CityLoader {
 
     private List<String[]> readCities(String path) throws IOException {
         // Development
-        // List<String> content = Files.readAllLines(Paths.get((new File("").getAbsolutePath() + "/src/" + path)));
+         List<String> content = Files.readAllLines(Paths.get((new File("").getAbsolutePath() + "/src/" + path)));
 
         // Production
-        List<String> content = Files.readAllLines(Paths.get(path));
+//        List<String> content = Files.readAllLines(Paths.get(path));
 
         List<String[]> cities = new ArrayList<>();
 

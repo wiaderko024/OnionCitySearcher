@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 
 public class GUI {
@@ -16,10 +17,32 @@ public class GUI {
     }
 
     private void createGUI() throws IOException {
-        CityLoader loader = new CityLoader("cities.csv");
-        CityModel model = new CityModel(loader.getCities());
+        JFrame frame = new JFrame("Wybierz kraj:");
 
-        new MyJFrame(model, loader);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(new Dimension(400, 200));
+        frame.setResizable(true);
+        frame.setLayout(new GridLayout(3, 1));
+
+        JButton button1 = new JButton("Polska");
+        JButton button2 = new JButton("Norwegia");
+        JButton button3 = new JButton("Szwecja");
+
+        button1.addActionListener(e -> {
+            try {
+                CityLoader loader = new CityLoader("poland.csv");
+                PolandCityModel model = new PolandCityModel(loader.getCities());
+                new PolandJFrame(model, loader);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
+
+        frame.add(button1);
+        frame.add(button2);
+        frame.add(button3);
+
+        frame.setVisible(true);
     }
 
 }
